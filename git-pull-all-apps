@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -euo pipefail
+
+for i in simple-ecommerce,vi; do
+    IFS=',' read -r name repo <<< "${i}"
+
+    printf "\n\U1F4D8 Updating %s..." "${name}"
+	# Clone or pull changes
+	if [ -d "$name" ]; then
+        echo "Pulling changes..."
+		pushd "$name"
+		git pull "git@github.com:NestorasRose/$repo.git"
+        popd
+	else
+        echo "Cloning repository..."
+		git clone "git@github.com:NestorasRose/$repo.git" "$name"
+	fi
+done

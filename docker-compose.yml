@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  db:
+    container_name: PostgreSQL_DB
+    image: postgres:10.3-alpine
+    restart: always
+    stop_signal: SIGINT  # Fast shutdown.
+    environment:
+     - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5433:5433
+    volumes:
+      - db_data:/var/lib/postgresql/data:delegated
+    networks:
+      - numan
+  simple-ecommerce:
+    build: ./simple-ecommerce
+    container_name: Simple-Ecommerce
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 1149 -b '0.0.0.0'"
+    environment:
+      - DATABASE_URL=postgres://postgres@db
+    volumes:
+      - ./simple-ecommerce:/app:cached
+      - /app/node_modules
+    ports:
+      - 1149:1149
+    depends_on:
+      - db
+    networks:
+      - numan
+    links:
+      - mailcatcher
+    stdin_open: true
+    tty: true
+
+volumes:
+  db_data:
+networks:
+  numan:
+    driver: bridge
