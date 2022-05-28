@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-for i in simple-ecommerce,simple-ecommerce; do
+for i in simple-ecommerce,simple-ecommerce esscentials,esscentials; do
     IFS=',' read -r name repo <<< "${i}"
 
     printf "\n\U1F4D8 Updating %s..." "${name}"
