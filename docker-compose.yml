@@ -31,6 +31,26 @@ services:
     stdin_open: true
     tty: true
 
+  esscentials:
+    build: ./esscentials
+    container_name: esscentials
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 1150 -b '0.0.0.0'"
+    environment:
+      - DATABASE_URL=postgres://postgres@sql
+    volumes:
+      - ./esscentials:/app:cached
+      - /app/node_modules
+    ports:
+      - 1150:1150
+    depends_on:
+      - sql
+    networks:
+      - nestoras
+    links:
+      - mailcatch
+    stdin_open: true
+    tty: true
+
   mailcatch:
     container_name: Mailcatch
     image: schickling/mailcatcher
