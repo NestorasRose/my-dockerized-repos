@@ -60,6 +60,36 @@ services:
     networks:
       - nestoras
 
+  dberm:
+    container_name: DBerm
+    image: postgres
+    restart: always
+    volumes:
+      - ./tmp/dberm:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+    networks:
+      - nestoras
+  erm:
+    build: ./erm
+    container_name: ERM
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 1111 -b '0.0.0.0'"
+    environment:
+      - DATABASE_URL=postgres://postgres@dberm
+    volumes:
+      - ./erm:/app:cached
+      - /app/node_modules
+    ports:
+      - 1111:1111
+    depends_on:
+      - dberm
+    networks:
+      - nestoras
+    links:
+      - mailcatch
+    stdin_open: true
+    tty: true
+
 volumes:
   database_data:
 networks:
