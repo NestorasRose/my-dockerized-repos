@@ -1,10 +1,11 @@
 # My Docker Repos
-## Initial Setup
-### Apps
+## [```docker-compose.yml```](./docker-compose.yml) Services
 - ERM ([localhost:1111](http://localhost:1111))
 - esscentials ([localhost:1150](http://localhost:1150))
 - Simple-Ecommerce ([localhost:1149](http://localhost:1149))
 - Mailcatcher ([localhost:1025](http://localhost:1025)). Mailcatcher is an app to catch the emails we are sending 
+- DBerm ([dberm](postgres://postgres@dberm)). Volume `/tmp/dberm:/var/lib/postgresql/data`
+- DB ([sql](postgres://postgres@sql)), Volume `/tmp/db:/var/lib/postgresql/data`
 ### TBD
 - Sidekiq ([localhost:0000/sidekiq](http://localhost:0000/sidekiq))
 
@@ -26,8 +27,8 @@ For extended information on installing Docker in Linux, visit https://docs.docke
 * ```git``` is available as a stub in ```/usr/bin```, executing this will generate a system prompt to install Xcode. This is probably the easiest (and longest) way to get ```git``` installed. Alternate installation instructions can be found at https://git-scm.com/download/mac.
 * ```docker``` and ```docker-compose``` are provided by Docker Desktop in macOS, visit https://docs.docker.com/desktop/mac/install/ for installation instructions.
 
-## [```docker-compose.yml```](./docker-compose.yml) services
 
+## Initial Setup
 ## Steps in order to setup local environment
 - Run the script `./git-pull-all-apps`
 - Run `docker-compose up --build`
