@@ -4,8 +4,8 @@
 - esscentials ([localhost:1150](http://localhost:1150))
 - Simple-Ecommerce ([localhost:1149](http://localhost:1149))
 - Mailcatcher ([localhost:1025](http://localhost:1025)). Mailcatcher is an app to catch the emails we are sending 
-- DBerm ([dberm](postgres://postgres@dberm)). Volume `/tmp/dberm:/var/lib/postgresql/data`
-- DB ([sql](postgres://postgres@sql)), Volume `/tmp/db:/var/lib/postgresql/data`
+- DBerm ([dberm](postgres://postgres@dberm)). Volume `/tmp/dberm:/var/lib/postgresql/data`, image: `postgres`
+- DB ([sql](postgres://postgres@sql)), Volume `/tmp/db:/var/lib/postgresql/data`, image: `postgres`
 ### TBD
 - Sidekiq ([localhost:0000/sidekiq](http://localhost:0000/sidekiq))
 
@@ -36,7 +36,7 @@ For extended information on installing Docker in Linux, visit https://docs.docke
 - While the containers are running run `docker-compose exec esscentials bundle exec rake db:setup db:migrate` in order to create the db and add db seeds in the esscentials DB
 
 ## Tests
-You can run tests just like before using
+You can run tests by running:
 - `docker-compose exec erm bundle exec rspec` for ERM
 - `docker-compose exec esscentials bundle exec rspec` for esscentials
 
