@@ -32,8 +32,8 @@ For extended information on installing Docker in Linux, visit https://docs.docke
 ## Steps in order to setup local environment
 - Run the script `./git-pull-all-apps`
 - Run `docker-compose up --build`
-- While the containers are running run `docker-compose exec erm bundle exec rake db:setup db:migrate` in order to create the db and add db seeds in the ERM DB
-- While the containers are running run `docker-compose exec esscentials bundle exec rake db:setup db:migrate` in order to create the db and add db seeds in the esscentials DB
+- While the containers are running run `docker-compose exec erm bundle exec rake db:setup db:migrate db:seed` in order to create the db and add db seeds in the ERM DB
+- While the containers are running run `docker-compose exec esscentials bundle exec rake db:setup db:migrate db:seed` in order to create the db and add db seeds in the esscentials DB
 
 ## Tests
 You can run tests by running:
