@@ -50,6 +50,7 @@ You can run tests by running:
 | ```docker ps```      | Brings the information of all services |
 | ```docker inspect container_name```      | Brings all the information of a service |
 | ```docker inspect container_id```      | Brings all the information of a service |
+| ```docker attach container_id```      | To see the logs of a container |
 | ```docker-compose up```      | Brings up all services, builds missing containers, volumes, networks|
 | ```docker-compose down```   | Brings down and removes all services, containers, non-external networks      |
 | ```docker-compose start```   | Starts all built containers        |
