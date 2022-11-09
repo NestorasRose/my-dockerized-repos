@@ -3,13 +3,13 @@
 
 | Service Name      | Address | Description |
 | ----------- | ----------- | ----------- | 
-| ERM | ([localhost:1111](http://localhost:1111)) | ERP system |
-| esscentials | ([localhost:1150](http://localhost:1150))| Ecommerce Website |
-| Simple-Ecommerce | ([localhost:1149](http://localhost:1149)) | Ecommerce Website template |
-| Mailcatcher | ([localhost:1025](http://localhost:1025)) | Mailcatcher is an app to catch the emails we are sending | 
-| DBerm | ([dberm](postgres://postgres@dberm)) | Volume `/tmp/dberm:/var/lib/postgresql/data`, image: `postgres` | 
-| DB | ([sql](postgres://postgres@sql)) | Volume `/tmp/db:/var/lib/postgresql/data`, image: `postgres` | 
-| Sidekiq | ([localhost:0000/sidekiq](http://localhost:0000/sidekiq)) | TBD |
+| ERM | [localhost:1111](http://localhost:1111) | ERP system |
+| esscentials | [localhost:1150](http://localhost:1150)| Ecommerce Website |
+| Simple-Ecommerce | [localhost:1149](http://localhost:1149) | Ecommerce Website template |
+| Mailcatcher | [localhost:1025](http://localhost:1025) | Mailcatcher is an app to catch the emails we are sending | 
+| DBerm | [dberm](postgres://postgres@dberm) | Volume `/tmp/dberm:/var/lib/postgresql/data`, image: `postgres` | 
+| DB | [sql](postgres://postgres@sql) | Volume `/tmp/db:/var/lib/postgresql/data`, image: `postgres` | 
+| Sidekiq | [localhost:0000/sidekiq](http://localhost:0000/sidekiq) | TBD |
 
 ## Prerequisites
 ### Linux
