@@ -5,7 +5,7 @@ heroku run 'bundle exec rails c' -a app_name
 
 ### Change `db` for review app (staging)
 ```bash 
-  heroku addons:attach numan-api-staging::DATABASE --app <review-app-here> # Attach the staging database to your review app: 
+  heroku addons:attach app_name::DATABASE --app <review-app-here> # Attach the staging database to your review app: 
 ```
 ```bash 
   heroku pg:promote <ENV name here> --app <review-app-here> # Promote the attached `db` to the primary database for your review app:
