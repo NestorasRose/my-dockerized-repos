@@ -1,7 +1,7 @@
 # Developer Handbook
 
 ## Database (`Configuration/Design`)
----
+
 ### Structure
 > The design of the database fields/table name must reflect the business logic of our service.
 -  {{ Id }} is `uuid` or `int`.
@@ -22,7 +22,7 @@
 <br>
 
 ## Service Layer `Design/Implimentation`
----
+
 ### Location
 -  Which domain should the service method be in?
 - Do we need a new service for the new service method?
@@ -42,7 +42,7 @@
 <br>
 
 ## SOLID principles
----
+
 <b>`The Single Responsibility Principle:`</b> states that a class should do one thing and therefore it should have only a single reason to change.<br>
 <b>`The Open-Closed Principle:`</b> requires that classes should be open for extension and closed to modification.<br>
 <b>`The Liskov Substitution Principle:`</b> states that subclasses should be substitutable for their base classes.<br>
@@ -52,7 +52,7 @@
 <br>
 
 ## Coupling
----
+
  > When services are loosely coupled, a change to one service should not require a change to another.
  
  A classic mistake is to pick an integration style that tightly binds one service to another, causing changes inside the service to require a change to consumers. <br>
@@ -70,7 +70,7 @@
 <br>
 
 ## Observability (Logs/Metrics)
----
+
 ### `Log Aggregation`
  Collecting information across multiple microservices, a vital building block of any monitoring or observability solution
 <br>
