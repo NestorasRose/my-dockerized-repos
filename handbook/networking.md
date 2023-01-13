@@ -1,4 +1,3 @@
 # Networking
-> `ipconfig /displaydns`
-
-> `ipconfig /flushdns`
+- `ipconfig /displaydns`
+- `ipconfig /flushdns`
