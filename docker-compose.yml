@@ -1,5 +1,4 @@
 version: "3"
-
 services:
   sql:
     container_name: DB
@@ -74,6 +73,7 @@ services:
     build: ./erm
     container_name: ERM
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 1111 -b '0.0.0.0'"
+    env_file: erm/.env
     environment:
       - DATABASE_URL=postgres://postgres@dberm
     volumes:
